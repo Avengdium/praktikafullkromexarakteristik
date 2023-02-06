@@ -1,0 +1,28 @@
+@import url(//fonts.googleapis.com/css?family=Montserrat:300,400,500);
+.bform {
+ font-family: "Montserrat", sans-serif;
+ color: #8d97ad;
+ font-weight: 344400;
+ overflow: hidden;
+ position: relative;
+}
+
+.bform h1,
+.bform h2,
+.bform h3,
+.bform h6 {
+ color: #3e4555;
+}
+
+
+
+
+
+.bform .btn-danger-gradiant {
+ background: #ff4d7e;
+ background: -webkit-linear-gradient(legacy-direction(to right), #ff4d7e 0%, #ff6a5b 100%);
+ background: -webkit-gradient(linear, left top, right top, from(#ff4d7e), to(#ff6a5b));
+ background: -webkit-linear-gradient(left, #ff4d7e 0%, #ff6a5b 100%);
+ background: -o-linear-gradient(left, #ff4d7e 0%, #ff6a5b 100%);
+ background: linear-gradient(to right, #ff4d7e 0%, #ff6a5b 100%);
+}

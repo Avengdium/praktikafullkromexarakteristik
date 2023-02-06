@@ -1,0 +1,141 @@
+{% extends 'main/base.html' %}
+{% block title %}Оформление заказа{% endblock %}
+{% block content %}
+
+	<!-- Home -->
+
+	<div class="home">
+		<div class="home_container">
+			<div class="home_background" style="background-image:url(media/product/cart.jpg)"></div>
+			<div class="home_content_container">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="home_content">
+								<div class="breadcrumbs">
+									<ul>
+										<li><a href="/home">Главная</a></li>
+										<li><a href="/cart">Корзина</a></li>
+										<li>Оформление заказа</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- оформление -->
+	
+	<div class="checkout">
+		<div class="container">
+			<div class="row">
+
+				<!-- инфа -->
+				<div class="col-lg-6">
+					<div class="billing checkout_section">
+						<div class="section_title">Доставка</div>
+						<div class="section_subtitle">Введите свои данные ниже</div>
+						<div class="checkout_form_container">
+							<form action="#" id="checkout_form" class="checkout_form">
+								<div class="row">
+									<div class="col-xl-6">
+										<!-- имя -->
+										<label for="checkout_name">Имя</label>
+										<input type="text" id="checkout_name" class="checkout_input" required="required">
+									</div>
+									<div class="col-xl-6 last_name_col">
+										<!-- фамилия -->
+										<label for="checkout_last_name">Фамилия</label>
+										<input type="text" id="checkout_last_name" class="checkout_input" required="required">
+									</div>
+								</div>
+								<div>
+									<!-- юр лицо -->
+									<label for="checkout_company">Введите название своей компании, если заказавыает юридическое лицо</label>
+									<input type="text" id="checkout_company" class="checkout_input">
+								</div>
+								<div>
+									<!-- адрес -->
+									<label for="checkout_address">Адрес</label>
+									<input type="text" id="checkout_address" class="checkout_input" required="required">
+								</div>
+								<div>
+									<!-- индекс -->
+									<label for="checkout_zipcode">Индекс</label>
+									<input type="text" id="checkout_zipcode" class="checkout_input" required="required">
+								</div>
+								<div>
+									<!-- город -->
+									<label for="checkout_city">Город</label>
+									<input type="checkout_city" id="checkout_city" class="dropdown_item_select checkout_input" require="required">
+								</div>
+								<div>
+								</div>
+								<div>
+									<!-- номер телефона -->
+									<label for="checkout_phone">Номер телефона</label>
+									<input type="phone" id="checkout_phone" class="checkout_input" required="required">
+								</div>
+								<div>
+									<!-- почта -->
+									<label for="checkout_email">Арес электронной почты</label>
+									<input type="phone" id="checkout_email" class="checkout_input" required="required">
+								</div>
+								<div class="checkout_extra">
+									<div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+
+				<!-- заказ -->
+
+				<div class="col-lg-6">
+					<div class="order checkout_section">
+						<div class="section_title">Ваш заказ</div>
+						<div class="section_subtitle">Детали заказа</div>
+
+						<!-- детали -->
+						<div class="order_list_container">
+							<div class="order_list_bar d-flex flex-row align-items-center justify-content-start">
+								<div class="order_list_title">продукт</div>
+							</div>
+							<ul class="order_list">
+								<li class="d-flex flex-row align-items-center justify-content-start">
+									<div class="order_list_title">ну тут заказики должны быть</div>
+									<div class="order_list_value ml-auto">а тут цена тип</div>
+								</li>
+								</li>
+								</li>
+								<li class="d-flex flex-row align-items-center justify-content-start">
+									<div class="order_list_title">Итого</div>
+									<div class="order_list_value ml-auto">Стоимость</div>
+								</li>
+							</ul>
+						</div>
+
+						<!-- оплата -->
+						<div class="payment">
+							<div class="payment_options">
+								<label class="payment_option clearfix">Оплата при получении
+									<input type="radio" name="radio">
+									<span class="checkmark"></span>
+								</label>
+							</div>
+						</div>
+
+						<!-- текст дополнительный -->
+						<div class="order_text">Из-за проблемы с логистикой доставка может задержаться до 21 дня.</div>
+						<div class="button order_button"><a href="#">Оформить заказ.</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{% endblock %}

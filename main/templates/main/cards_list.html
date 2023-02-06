@@ -1,0 +1,115 @@
+{% extends 'main/base.html' %}
+{% block title %}Каталог{% endblock %}
+{% block content %}
+
+	
+	<!-- Home -->
+
+	<div class="home">
+		<div class="home_container">
+			<div class="home_background" style="background-image:url('media/product/categories.jpg')"></div>
+			<div class="home_content_container">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="home_content">
+								<div class="home_title">Смартфоны<span>.</span></div>
+								<div class="home_text"><p>В нашем магазине есть смартфоны на любой вкус и кошелек.</p></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Products -->
+
+	<div class="products">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					
+					<!-- сортировка -->
+					<div class="sorting_bar d-flex flex-md-row flex-column align-items-md-center justify-content-md-start">
+						<div class="results">Показано {{ post_count }} результатов</p></div>
+						<div class="sorting_container ml-md-auto">
+							<div class="sorting">
+								<ul class="item_sorting">
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="product_grid">
+					{% for p in product %}
+					<!-- Product -->
+					<div class="product">
+						<div class="product_image"><img src="{{ p.IMG_PRODUCT }}" alt=""></div>
+						<div class="product_content">
+							<div class="product_title"><a href="/catalog">{{ p.NAME_PRODUCT }}</a></div>
+							<div class="product_price">{{ p.PRICE_PRODUCT }}</div>
+							<div class="">
+							{% if user.is_superuser == 1%}
+							<a href="{% url 'post-delete' p.ID_PRODUCT %}" class=" btn-danger">Удалить</a>
+							<a href="{% url 'post-update' p.ID_PRODUCT %}" class=" btn-danger">Обновить карточку</a>
+							{% endif %}
+							{% if user.is_staff == 1%}
+							<a href="{% url 'post-delete' p.ID_PRODUCT %}" class=" btn-danger">Удалить</a>
+							<a href="{% url 'post-update' p.ID_PRODUCT %}" class=" btn-danger">Обновить карточку</a>
+							{% endif %}
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+	<!-- Icon Boxes -->
+
+	<div class="icon_boxes">
+		<div class="container">
+			<div class="row icon_box_row">
+				
+				<!-- Icon Box -->
+				<div class="col-lg-4 icon_box_col">
+					<div class="icon_box">
+						<div class="icon_box_image"><img src='media/product/icon_1.svg' alt=""></div>
+						<div class="icon_box_title">Бесплатная доставка по России.</div>
+						<div class="icon_box_text">
+							<p>Вы можете заказать товар с доставкой по всей России.</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Icon Box -->
+				<div class="col-lg-4 icon_box_col">
+					<div class="icon_box">
+						<div class="icon_box_image"><img src='media/product/icon_2.svg' alt=""></div>
+						<div class="icon_box_title">Бесплатный возврат.</div>
+						<div class="icon_box_text">
+							<p>Наш магазин предоставляет бесплатный возврат товара в течении 14 дней.</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Icon Box -->
+				<div class="col-lg-4 icon_box_col">
+					<div class="icon_box">
+						<div class="icon_box_image"><img src='media/product/icon_3.svg' alt=""></div>
+						<div class="icon_box_title">Быстрая поддержка.</div>
+						<div class="icon_box_text">
+							<p>Наш магазин имеет быструю поддержку, которая поможет вам в трудной ситуации.</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	{% endblock %}

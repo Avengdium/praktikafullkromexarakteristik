@@ -1,0 +1,27 @@
+{% extends "main/base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container">
+  <div class="profile">
+      <form method="POST" enctype="multipart/form-data" class="raper">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Ваш профиль</legend>
+            <div class="media raper">
+              <img class="rounded-circle media-left" src="{{ user.profile.image.url }}" width="200px" height="200px">
+            </div>
+            <br>
+            {{ u_form|crispy }}<br>
+            {{ p_form|crispy }}
+        </fieldset>
+            <button type="submit" class="registerbtn">Обновить</button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    
+  
+{% endblock content %}

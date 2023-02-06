@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Создание карточки{% endblock %}
+
+{% block content %}
+<div class="container"
+    <div class="topchek">
+        <h1>Форма создания карточки</h1><br>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.ID_PRODUCT }}<br>
+            {{ form.NAME_PRODUCT }}<br>
+            {{ form.PRICE_PRODUCT }}<br>
+            {{ form.IMG_PRODUCT }}<br>
+            <span>{{ error }}</span>
+            <button type="submit" class="registerbtn">Добавить карточку</button>
+
+            
+        </form>
+    </div>
+</div>
+   
+{% endblock %}

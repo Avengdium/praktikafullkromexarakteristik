@@ -1,0 +1,123 @@
+{% extends 'main/base.html' %}
+{% block title %}Главная{% endblock %}
+<!-- осуждаю -->
+{% block content %}
+	<!-- реклама -->
+
+	<div class="avds drop">
+		<div class="avds_container d-flex flex-lg-row flex-column align-items-start justify-content-between">
+			<div class="avds_small">
+				<div class="avds_background" style="background-image:url('media/product/avds_small.jpg')"></div>
+				<div class="avds_small_inner">
+					<div class="avds_discount_container">
+						<img src="images/discount.png" alt="">
+						<div>
+						</div>
+					</div>
+					<div class="avds_small_content">
+						<div class="avds_title">Смартфоны.</div>
+						<div class="avds_link"><a href="/catalog">Перейти в каталог</a></div>
+					</div>
+				</div>
+			</div>
+			<div class="avds_large">
+				<div class="avds_background" style="background-image:url('media/product/avds_large.jpg')"></div>
+				<div class="avds_large_container">
+					<div class="avds_large_content">
+						<div class="avds_title">Аксессуары.</div>
+						<div class="avds_text">Наши аксессуары являются полностью оригинальными и поставляются только сертифицированными поставщиками.</div>
+						<div class="avds_link avds_link_large"><a href="/catalog">Перейти в каталог</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Products -->
+
+	<div class="products">
+		<div class="container">
+			<div class="col">
+				<div class="col">
+					<div class="product_grid">
+						{% for p in product %}
+							{% for a in array %}
+								{% if p.ID_PRODUCT == a %}
+						<!-- Product -->
+						<div class="product">
+							<div class="product_image"><img src="{{ p.IMG_PRODUCT }}" alt=""></div>
+							<div class="product_content">
+								<div class="product_title"><a href="/catalog">{{ p.NAME_PRODUCT }}</a></div>
+								<div class="product_price">{{ p.PRICE_PRODUCT }}</div>
+							</div>
+						</div>
+								{% endif %}
+							{% endfor %}
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- еще реклама -->
+
+	<div class="avds_xl">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="avds_xl_container clearfix">
+						<div class="avds_xl_background" style="background-image:url('media/product/avds_xl.jpg')"></div>
+						<div class="avds_xl_content">
+							<div class="avds_title">Лучшие девайсы.</div>
+							<div class="avds_text">Все наши устройства исключительно с отметкой "РОСТЕСТ" и имеют официальную гарантию от производителя.</div>
+							<div class="avds_link avds_xl_link"><a href="/catalog">Посмотреть наш каталог</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Icon Boxes -->
+
+	<div class="icon_boxes">
+		<div class="container">
+			<div class="row icon_box_row">
+				
+				<!-- Icon Box -->
+				<div class="col-lg-4 icon_box_col">
+					<div class="icon_box">
+						<div class="icon_box_image"><img src='media/product/icon_1.svg' alt=""></div>
+						<div class="icon_box_title">Бесплатная доставка по России.</div>
+						<div class="icon_box_text">
+							<p>Вы можете заказать товар с доставкой по всей России.</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Icon Box -->
+				<div class="col-lg-4 icon_box_col">
+					<div class="icon_box">
+						<div class="icon_box_image"><img src='media/product/icon_2.svg' alt=""></div>
+						<div class="icon_box_title">Бесплатный возврат.</div>
+						<div class="icon_box_text">
+							<p>Наш магазин предоставляет бесплатный возврат товара в течении 14 дней.</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Icon Box -->
+				<div class="col-lg-4 icon_box_col">
+					<div class="icon_box">
+						<div class="icon_box_image"><img src='media/product/icon_3.svg' alt=""></div>
+						<div class="icon_box_title">Быстрая поддержка.</div>
+						<div class="icon_box_text">
+							<p>Наш магазин имеет быструю поддержку, которая поможет вам в трудной ситуации.</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	{% endblock %}

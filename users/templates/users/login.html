@@ -1,0 +1,12 @@
+{% extends "main/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    <form method="POST" class="fix">
+        {% csrf_token %}
+        <fieldset class="form-label">
+            {{ form|crispy }}
+        </fieldset>
+        <button type="submit" class="registerbtn">Войти</button>
+{% endblock %}
