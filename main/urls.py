@@ -10,6 +10,7 @@ urlpatterns = [
     path('auth', views.auth, name='auth'),
     path('create_card/', views.create_card),
     path('<int:pk>/update', views.PostUpdateView.as_view(), name='post-update'),
-    path('<int:pk>/delete', views.PostDeleteView.as_view(), name='post-delete')
+    path('<int:pk>/delete', views.PostDeleteView.as_view(), name='post-delete'),
+    path('catalog/<int:pk>', views.XarakteristikiDetailView.as_view(), name='xaraketistiki')
 
 ]

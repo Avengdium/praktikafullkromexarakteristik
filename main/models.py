@@ -5,6 +5,10 @@ class Products(models.Model):
     NAME_PRODUCT = models.CharField('name_products', max_length=49, null=False)
     PRICE_PRODUCT = models.CharField('price_products', max_length=48, null=False)
     IMG_PRODUCT = models.URLField('img_products', null=False)
+    EKRAN_PRODUCT = models.CharField('ekran_products', max_length=100, null=True)
+    KAMERA_PRODUCT = models.CharField('kamera_products', max_length=100, null=True)
+    DINAMIK_PRODUCT = models.CharField('dinamic_products', max_length=100, null=True)
+    GODVIPUSKA_PRODUCT = models.CharField('godvipuska_products', max_length=100, null=True)
     
     def str(self):
             return self.NAME_PRODUCT
