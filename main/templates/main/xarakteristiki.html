@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Характеристики{%endblock%}
+
+{% block content %}
+<div class="fix1">
+<div class="list-group">
+    <a href="/catalog" class="list-group-item list-group-item-action active" aria-current="true">
+     Разрешение экрана - {{ xar.EKRAN_PRODUCT }}
+    </a>
+    <a href="/catalog" class="list-group-item list-group-item-action"> Качество камеры -  {{ xar.KAMERA_PRODUCT }}</a>
+    <a href="/catalog" class="list-group-item list-group-item-action"> Тип динамика - {{ xar.DINAMIK_PRODUCT }}</a>
+    <a href="/catalog" class="list-group-item list-group-item-action"> Год выпуска смартфона - {{ xar.GODVIPUSKA_PRODUCT }}</a>
+  </div>
+</div>
+{% endblock %}

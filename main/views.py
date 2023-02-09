@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Products, Home_content, Home_Slider
 from .forms import SubForm, ProductsForm
-from django.views.generic import DeleteView, UpdateView
+from django.views.generic import DeleteView, UpdateView, DetailView
 
 class PostUpdateView(UpdateView):
     model = Products
@@ -86,3 +86,8 @@ def create_card(request):
 
     return render(request, 'main/create_card.html', data)
 
+
+class XarakteristikiDetailView(DetailView):
+    model = Products
+    template_name = 'main/xarakteristiki.html'
+    context_object_name = 'xar'

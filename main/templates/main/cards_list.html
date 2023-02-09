@@ -47,7 +47,7 @@
 					<div class="product">
 						<div class="product_image"><img src="{{ p.IMG_PRODUCT }}" alt=""></div>
 						<div class="product_content">
-							<div class="product_title"><a href="/catalog">{{ p.NAME_PRODUCT }}</a></div>
+							<div class="product_title"><a href="{% url 'xaraketistiki' p.ID_PRODUCT %}">{{ p.NAME_PRODUCT }}</a></div>
 							<div class="product_price">{{ p.PRICE_PRODUCT }}</div>
 							<div class="">
 							{% if user.is_superuser == 1%}
